@@ -26,6 +26,7 @@ $(document).ready(function () {
   audio.volume = parseInt($(".mpVolSlider").val()) / 100;
   $(".mpTrackName").text(tracks[0].name);
   updatePlaylistHighlight();
+  video.play().catch(function () {});
   audio.play().then(function () {
     isPlaying = true;
     $(".mpPlayPause i").removeClass("fa-play").addClass("fa-pause");
@@ -43,6 +44,7 @@ $(document).ready(function () {
     $(".mpTimeLeft").text("0:00");
     $(".mpTimeRight").text("0:00");
     updatePlaylistHighlight();
+    video.play().catch(function () {});
     audio.play();
     isPlaying = true;
     $(".mpPlayPause i").removeClass("fa-play").addClass("fa-pause");
