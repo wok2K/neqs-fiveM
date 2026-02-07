@@ -2,12 +2,8 @@ $(document).ready(function () {
   var tracks = Config.MusicPlayer.tracks;
   var currentIndex = 0;
   var audio = document.getElementById("MusicAudio");
-  var video = document.getElementById("MusicVideo");
   var isPlaying = false;
   var shuffleOn = false;
-
-  // Hide app.js video
-  $("#BackgroundVideo").hide();
 
   // Build playlist
   for (var i = 0; i < tracks.length; i++) {
@@ -20,19 +16,17 @@ $(document).ready(function () {
   }
 
   function loadVideo(src) {
-    video.innerHTML = '';
-    var source = document.createElement('source');
-    source.src = src;
-    source.type = 'video/mp4';
-    video.appendChild(source);
-    video.load();
-    video.addEventListener('canplay', function onCanPlay() {
-      video.removeEventListener('canplay', onCanPlay);
-      video.play().catch(function (e) { console.log('Video play error:', e); });
-    });
-    video.addEventListener('error', function (e) {
-      console.log('Video error:', e);
-    });
+    var bg = document.getElementById("BackgroundVideo");
+    if (bg) {
+      var source = bg.querySelector("source");
+      if (source) {
+        source.src = src;
+      } else {
+        bg.src = src;
+      }
+      bg.load();
+      bg.play().catch(function () {});
+    }
   }
 
   // Load and autoplay first track

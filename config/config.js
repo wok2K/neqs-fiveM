@@ -47,6 +47,16 @@ Config.Staff = {
     ]
 }
 
+Config.SocialMedia = []
+
+Config.BackgroundSettings = {
+    background_source : "",
+    background_sound_source : "",
+    background_video_path : "",
+    background_music_path : "",
+    default_sound_volume : 25
+}
+
 Config.Locales = {
     Welcome : "WELCOME TO",
     Sound : "Volume",

@@ -9,9 +9,9 @@ const Config = new Object();
 
 Config.MusicPlayer = {
     tracks : [
-        { name: "Bloodhound Lil Jeff - BIG 3", audio: "./assets/big3.mp3", video: "./assets/big3.mp4", cover: "./assets/BIG 3LLJEFF.png" },
-        { name: "Ice Spice - Did It First", audio: "./assets/diditfirst.mp3", video: "./assets/diditfirst.mp4", cover: "./assets/icespize.png" },
-        { name: "Heembeezy - When You Call", audio: "./assets/whenyoucall.mp3", video: "./assets/whenyoucall.mp4", cover: "./assets/heembeezy.png" },
+        { name: "Bloodhound Lil Jeff - BIG 3", audio: "./assets/big3.mp3", video: "https://files.catbox.moe/w6jp72.mp4", cover: "./assets/BIG 3LLJEFF.png" },
+        { name: "Ice Spice - Did It First", audio: "./assets/diditfirst.mp3", video: "https://files.catbox.moe/dp63x2.mp4", cover: "./assets/icespize.png" },
+        { name: "Heembeezy - When You Call", audio: "./assets/whenyoucall.mp3", video: "https://files.catbox.moe/vo3auc.mp4", cover: "./assets/heembeezy.png" },
     ]
 }
 
@@ -50,9 +50,9 @@ Config.Staff = {
 Config.SocialMedia = []
 
 Config.BackgroundSettings = {
-    background_source : "",
+    background_source : "video",
     background_sound_source : "",
-    background_video_path : "",
+    background_video_path : "https://files.catbox.moe/w6jp72.mp4",
     background_music_path : "",
     default_sound_volume : 25
 }
