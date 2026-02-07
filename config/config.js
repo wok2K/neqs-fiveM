@@ -7,14 +7,6 @@
 
 const Config = new Object();
 
-Config.BackgroundSettings = {
-    background_source : "video", // possible values (video/image)
-    background_sound_source : "video", // possible values (video/music/mute)
-    background_video_path : "https://files.catbox.moe/dp63x2.mp4",
-    background_music_path : "./assets/music.mp3",
-    default_sound_volume: 25,
-}
-
 Config.MusicPlayer = {
     tracks : [
         { name: "Bloodhound Lil Jeff - BIG 3", audio: "./assets/BIG 3 bloodhound lil jeff.mp3", video: "./assets/Bloodhound_Lil_Jeff_x_Bloodhound_Q50_x_Slimeto_-_BIG_3_Official_Video_Dir._Yardiefilms_-_Yardie_Films_Production_1080p_h264.mp4", cover: "./assets/BIG 3LLJEFF.png" },
@@ -50,8 +42,8 @@ Config.Staff = {
     title : "PROJECT TEAM",
     subtitle : "",
     members : [
-        {name : "Skizeun", role :"Owner", avatar:"https://files.catbox.moe/11fjcq.png"},
-        {name : "Saint Exeos", role :"Developer", avatar:"https://files.catbox.moe/zvya19.png"},
+        {name : "neq", role :"Owner", avatar:"https://files.catbox.moe/11fjcq.png"},
+        {name : "idk", role :"Developer", avatar:"https://files.catbox.moe/zvya19.png"},
     ]
 }
 
