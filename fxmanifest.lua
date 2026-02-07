@@ -10,6 +10,7 @@ lua54 'yes'
 files {
     'nui/index.html',
     'nui/js/app.js',
+    'nui/js/jquery.min.js',
     'nui/js/musicplayer.js',
     'config/config.js',
     'nui/css/style.css',
