@@ -18,14 +18,18 @@ $(document).ready(function () {
   function loadVideo(src) {
     var bg = document.getElementById("BackgroundVideo");
     if (bg) {
-      var source = bg.querySelector("source");
-      if (source) {
-        source.src = src;
-      } else {
-        bg.src = src;
+      bg.pause();
+      // Remove <source> elements so direct src works cleanly
+      var sources = bg.querySelectorAll("source");
+      for (var s = 0; s < sources.length; s++) {
+        bg.removeChild(sources[s]);
       }
+      bg.src = src;
       bg.load();
-      bg.play().catch(function () {});
+      bg.oncanplay = function () {
+        bg.play().catch(function () {});
+        bg.oncanplay = null;
+      };
     }
   }
 
