@@ -19,14 +19,29 @@ $(document).ready(function () {
     $(".mpPlaylist").append(item);
   }
 
+  function loadVideo(src) {
+    video.innerHTML = '';
+    var source = document.createElement('source');
+    source.src = src;
+    source.type = 'video/mp4';
+    video.appendChild(source);
+    video.load();
+    video.addEventListener('canplay', function onCanPlay() {
+      video.removeEventListener('canplay', onCanPlay);
+      video.play().catch(function (e) { console.log('Video play error:', e); });
+    });
+    video.addEventListener('error', function (e) {
+      console.log('Video error:', e);
+    });
+  }
+
   // Load and autoplay first track
   audio.src = tracks[0].audio;
-  video.src = tracks[0].video;
+  loadVideo(tracks[0].video);
   $(".mpCoverImg").attr("src", tracks[0].cover);
   audio.volume = parseInt($(".mpVolSlider").val()) / 100;
   $(".mpTrackName").text(tracks[0].name);
   updatePlaylistHighlight();
-  video.play().catch(function () {});
   audio.play().then(function () {
     isPlaying = true;
     $(".mpPlayPause i").removeClass("fa-play").addClass("fa-pause");
@@ -37,14 +52,13 @@ $(document).ready(function () {
   function loadTrack(index) {
     currentIndex = index;
     audio.src = tracks[index].audio;
-    video.src = tracks[index].video;
+    loadVideo(tracks[index].video);
     $(".mpCoverImg").attr("src", tracks[index].cover);
     $(".mpTrackName").text(tracks[index].name);
     $(".mpProgress").css("width", "0%");
     $(".mpTimeLeft").text("0:00");
     $(".mpTimeRight").text("0:00");
     updatePlaylistHighlight();
-    video.play().catch(function () {});
     audio.play();
     isPlaying = true;
     $(".mpPlayPause i").removeClass("fa-play").addClass("fa-pause");

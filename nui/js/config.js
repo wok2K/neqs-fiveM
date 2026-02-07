@@ -16,7 +16,7 @@ Config.MusicPlayer = {
 }
 
 Config.Title = { 
-    title : "GTA Park Roleplay", 
+    title : "BABYORK CITY", 
     subtitle : "Season One" 
 }
 
